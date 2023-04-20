@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="header">
+      <app-header-d></app-header-d>
+    </div>
+    <div class="main-container">
+      <div class="side-nav">
+        <app-side-nav-p (navLinkClicked)="onNavLinkClicked($event)"></app-side-nav-p>
+      </div>
+      <div class="main-content">
+        <app-profil-partenaire *ngIf="currentPage === 'mon-profil'"></app-profil-partenaire>
+        <app-espace-terrain *ngIf="currentPage === 'espace-terrains'" ></app-espace-terrain>
+        <app-espace-competition *ngIf="currentPage === 'espace-competitions'"></app-espace-competition>
+      </div>
+    </div>
+  </div>

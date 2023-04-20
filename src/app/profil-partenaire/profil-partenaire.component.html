@@ -1,0 +1,81 @@
+<div class="container">
+    <div *ngIf="partenaire">
+      <h1>Profil</h1>
+      <p>Nom d'utilisateur: {{ partenaire.nomUtilisateur}}</p>
+      <p>Nom: {{ partenaire.nom }}</p>
+      <p>Prénom: {{ partenaire.prenom }}</p>
+      <p>Email: {{ partenaire.email }}</p>
+      <p>Mot de passe: {{ partenaire.motDePasse }}</p>
+      <p>Téléphone: {{ partenaire.phone }}</p>
+      <p>Adresse: {{ partenaire.adresse }}</p>
+      <p>Pays: {{ partenaire.pays }}</p>
+      <form *ngIf="isEditMode">
+        <!-- Afficher les champs de formulaire pour modifier les données du client -->
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input [(ngModel)]="partenaire.nom" name="nom" id="nom" class="form-control" placeholder="Nom">
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input [(ngModel)]="partenaire.prenom" name="prenom" id="prenom" class="form-control" placeholder="Prénom">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input [(ngModel)]="partenaire.email" name="email" id="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="username">Nom d'utilisateur:</label>
+          <input [(ngModel)]="partenaire.nomUtilisateur" name="username" id="username" class="form-control" placeholder="Nom d'utilisateur">
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe:</label>
+          <input [(ngModel)]="partenaire.motDePasse" name="password" id="password" class="form-control" placeholder="Mot de passe:">
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirmation du mot de passe:</label>
+          <input [(ngModel)]="partenaire.confirmationMotDePasse" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirmation du mot de passe">
+        </div>
+        <div class="form-group">
+          <label for="phone">Téléphone:</label>
+          <input [(ngModel)]="partenaire.phone" name="phone" id="phone" class="form-control" placeholder="Téléphone">
+        </div>
+        <div class="form-group">
+          <label for="adresse">Adresse:</label>
+          <input [(ngModel)]="partenaire.adresse" name="adresse" id="adresse" class="form-control" placeholder="Adresse">
+        </div>
+        <div class="form-group">
+          <label for="pays">Pays:</label>
+          <select [(ngModel)]="partenaire.pays" name="pays" id="pays" class="form-control" placeholder="Pays">
+            <option value="">Sélectionnez votre état</option>
+            <option value="Ariana">Ariana</option>
+            <option value="Béja">Béja</option>
+            <option value="Ben Arous">Ben Arous</option>
+            <option value="Bizerte">Bizerte</option>
+            <option value="Gabès">Gabès</option>
+            <option value="Gafsa">Gafsa</option>
+            <option value="Jendouba">Jendouba</option>
+            <option value="Kairouan">Kairouan</option>
+            <option value="Kasserine">Kasserine</option>
+            <option value="Kébili">Kébili</option>
+            <option value="Le Kef">Le Kef</option>
+            <option value="Mahdia">Mahdia</option>
+            <option value="La Manouba">La Manouba</option>
+            <option value="Médenine">Médenine</option>
+            <option value="Monastir">Monastir</option>
+            <option value="Nabeul">Nabeul</option>
+            <option value="Sfax">Sfax</option>
+            <option value="Sidi Bouzid">Sidi Bouzid</option>
+            <option value="Siliana">Siliana</option>
+            <option value="Sousse">Sousse</option>
+            <option value="Tataouine">Tataouine</option>
+            <option value="Tozeur">Tozeur</option>
+            <option value="Tunis">Tunis</option>
+            <option value="Zaghouan">Zaghouan</option>
+          </select>
+        </div>
+        <!-- Ajoutez d'autres champs de formulaire pour les autres données du client -->
+      </form>
+      <button class="btn btn-primary" (click)="toggleEditMode()">Modifier</button>
+      <button class="btn btn-success" *ngIf="isEditMode" (click)="saveChanges()">Enregistrer</button>
+    </div>
+  </div> 

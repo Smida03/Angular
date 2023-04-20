@@ -1,0 +1,9 @@
+.footer {
+    color: #fff;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    position: relative; /* positionne le footer relativement à son conteneur parent */
+    z-index: 3; /* positionne le footer au-dessus de la barre latérale et du contenu */
+    margin-top: auto; /* place le footer au-dessus du contenu */
+  }

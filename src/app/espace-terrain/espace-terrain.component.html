@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Formulaire de création d'un terrain -->
+        <h2>Créer un nouveau terrain</h2>
+        <form (ngSubmit)="onSubmit()" [formGroup]="terrainForm">
+          <div class="form-group">
+            <label for="nomDeTerrain">Nom de terrain</label>
+            <input type="text" id="nomDeTerrain" class="form-control" formControlName="nomDeTerrain" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" class="form-control" formControlName="description" required>
+          </div>
+          <div class="form-group">
+            <label for="localisation">Localisation</label>
+            <input type="text" id="localisation" class="form-control" formControlName="localisation" required>
+          </div>
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" id="image" class="form-control" formControlName="image" (change)="onFileChange($event)" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Créer</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <!-- Liste des terrains -->
+        <h2>Liste des terrains</h2>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let terrain of terrains">
+            <div class="row">
+              <div class="col-md-4">
+                <img [src]="getTerrainImageUrl(terrain)" alt="Image du terrain" class="img-thumbnail">
+              </div>
+              <div class="col-md-8">
+                <h3>{{ terrain.nomDeTerrain }}</h3>
+                <p>{{ terrain.description }}</p>
+                <p>{{ terrain.localisation }}</p>
+                <button class="btn btn-primary" (click)="onUpdate(terrain.id)">Modifier</button>
+                <button class="btn btn-danger" (click)="onDelete(terrain.id)">Supprimer</button>
+              </div>
+            </div>
+            <div *ngIf="terrainIdToEdit === terrain.id">
+                <form (ngSubmit)="onUpdate(terrain.id)" [formGroup]="terrainForm">
+                  <div class="form-group">
+                    <label for="nomDeTerrain">Nom de terrain</label>
+                    <input type="text" class="form-control" id="nomDeTerrain" formControlName="nomDeTerrain">
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" formControlName="description"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="localisation">Localisation</label>
+                    <input type="text" class="form-control" id="localisation" formControlName="localisation">
+                  </div>
+                  <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" class="form-control" formControlName="image" (change)="onFileChange($event)" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                  <button type="button" class="btn btn-secondary" (click)="onCancel()">Annuler</button>
+                </form>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

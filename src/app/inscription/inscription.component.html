@@ -1,0 +1,76 @@
+ <div class="container">
+    <h2>Inscription</h2>
+    <form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Entrez votre nom" [(ngModel)]="user.nom">
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prénom:</label>
+        <input type="text" formControlName="prenom" class="form-control" id="prenom" placeholder="Entrez votre prénom" [(ngModel)]="user.prenom">
+      </div>
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" formControlName="username" class="form-control" id="username" placeholder="Entrez votre nom d'utilisateur"[(ngModel)]="user.nomUtilisateur">
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe:</label>
+        <input type="password" formControlName="password" class="form-control" id="password" placeholder="Entrez votre mot de passe"[(ngModel)]="user.motDePasse">
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirmation du mot de passe:</label>
+        <input type="password" formControlName="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirmez votre mot de passe"[(ngModel)]="user.confirmationMotDePasse">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Entrez votre email"[(ngModel)]="user.email">
+      </div>
+      <div class="form-group">
+        <label for="phone">Téléphone:</label>
+        <input type="tel" formControlName="phone" class="form-control" id="phone" placeholder="Entrez votre téléphone"[(ngModel)]="user.phone">
+      </div>
+      <div class="form-group">
+        <label for="adresse">Adresse:</label>
+        <input type="text" formControlName="adresse" class="form-control" id="adresse" placeholder="Entrez votre adresse"[(ngModel)]="user.adresse">
+      </div>
+      <div class="form-group">
+        <label for="pays">Pays:</label>
+        <select formControlName="pays" class="form-control" id="pays"[(ngModel)]="user.pays">
+          <option value="">Sélectionnez votre état</option>
+          <option value="Ariana">Ariana</option>
+          <option value="Béja">Béja</option>
+          <option value="Ben Arous">Ben Arous</option>
+          <option value="Bizerte">Bizerte</option>
+          <option value="Gabès">Gabès</option>
+          <option value="Gafsa">Gafsa</option>
+          <option value="Jendouba">Jendouba</option>
+          <option value="Kairouan">Kairouan</option>
+          <option value="Kasserine">Kasserine</option>
+          <option value="Kébili">Kébili</option>
+          <option value="Le Kef">Le Kef</option>
+          <option value="Mahdia">Mahdia</option>
+          <option value="La Manouba">La Manouba</option>
+          <option value="Médenine">Médenine</option>
+          <option value="Monastir">Monastir</option>
+          <option value="Nabeul">Nabeul</option>
+          <option value="Sfax">Sfax</option>
+          <option value="Sidi Bouzid">Sidi Bouzid</option>
+          <option value="Siliana">Siliana</option>
+          <option value="Sousse">Sousse</option>
+          <option value="Tataouine">Tataouine</option>
+          <option value="Tozeur">Tozeur</option>
+          <option value="Tunis">Tunis</option>
+          <option value="Zaghouan">Zaghouan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="role">Devenir:</label>
+        <select formControlName="role" class="form-control" id="role"[(ngModel)]="user.role">
+          <option value="client">Client</option>
+          <option value="partenaire">Partenaire</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">s'inscrire</button>
+    </form>
+  </div>
+  

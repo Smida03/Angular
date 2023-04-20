@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="header">
+    <app-header-d></app-header-d>
+  </div>
+  <div class="main-container">
+    <div class="side-nav">
+      <app-side-nav (navLinkClicked)="onNavLinkClicked($event)"></app-side-nav> <!-- Écouter l'événement navLinkClicked et appeler la méthode onNavLinkClicked avec la valeur $event -->
+    </div>
+    <div class="main-content">  
+      <app-mon-profil *ngIf="currentPage === 'mon-profil'"></app-mon-profil> <!-- Afficher le composant MonProfilComponent si currentPage est 'mon-profil' -->
+      <app-reserver *ngIf="currentPage === 'reserver'"></app-reserver> <!-- Afficher le composant ReserverComponent si currentPage est 'reserver' -->
+      <app-mes-resesrvations *ngIf="currentPage === 'mes-reservations'"></app-mes-resesrvations>
+      <app-competitions *ngIf="currentPage === 'competitions'"></app-competitions>
+      <app-mes-participations *ngIf="currentPage === 'mes-participations'"></app-mes-participations>
+    </div>
+  </div>
+</div>

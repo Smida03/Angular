@@ -1,0 +1,34 @@
+/* Style pour la barre de navigation */
+nav {
+  border-bottom: 1px solid #ccc;
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+nav .navbar-brand {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+nav .nav-link {
+  font-weight: bold;
+}
+
+/* Style pour le formulaire de connexion */
+form.form-inline {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+form.form-inline .form-group {
+  margin-right: 10px;
+}
+
+form.form-inline .form-control {
+  width: 200px;
+}
+
+form.form-inline .btn {
+  margin-left: 10px;
+}

@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center">Liste des terrains</h1>
+
+  <ul class="list-group">
+    <li *ngFor="let terrain of terrains" class="list-group-item">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-sm">{{ terrain.nomDeTerrain }}</h3>
+          <p class="text-sm">{{ terrain.description }}</p>
+          <p class="text-sm">{{ terrain.localisation }}</p>
+        </div>
+        <div class="col-md-6">
+          <img [src]="getTerrainImageUrl(terrain)" alt="Image du terrain" class="img-thumbnail">
+        </div>
+      </div>
+      <div class="row mt-auto">
+        <div class="col-md-12 text-right">
+         <button class="btn btn-primary">Réserver</button> 
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
